@@ -1,0 +1,304 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}  
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}  
+     
+
+
+
+
+
+
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{document}
+
+
+
+\title{\textbf{Abgabe 1}\\[0.5cm] \textbf \large Computergestützte Methoden\\Wirtschaftwissenschaften}
+\author{\textbf{Gruppe 34}\\[0.5cm] Dennis Musa 4351743 \\ Ayad Khudhur 4347354}
+
+\date{(1.12.2024)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{IMG_1391.jpg}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+
+\tableofcontents
+
+
+
+\newpage
+\vspace{3cm}
+
+\section{Der zentrale Grenzwertsatz}
+
+Der zentrale Grenzwertsatz (ZGS) ist ein fundamentales Resultat der Wahrscheinlichkeitstheorie, das die Verteilung von Summen unabhängiger, identisch verteilter (i.i.d.) Zufallsvariablen (ZV) beschreibt. Er besagt, dass unter bestimmten Voraussetzungen die Summe einer großen Anzahl solcher ZV annähernd normalverteilt ist, unabhängig von der Verteilung der einzelnen ZV. Dies ist besonders nützlich, da die Normalverteilung gut untersucht und mathematisch handhabbar ist.
+
+\subsection{Aussage}
+
+Sei $X_1, X_2, \ldots, X_n$ eine Folge von i.i.d. ZV mit dem Erwartungswert $\mu = E(X_i)$ und der Varianz $\sigma^2 = \text{Var}(X_i)$, wobei $0 < \sigma^2 < \infty$ gelte. Dann konvergiert die standardisierte Summe $Z_n$ dieser ZV für $n \to \infty$ in Verteilung gegen eine Standardnormalverteilung:
+\[
+Z_n = \frac{\sum_{i=1}^n X_i - n\mu}{\sigma\sqrt{n}} \xrightarrow{d}N(0,1).
+\]
+
+Das bedeutet, dass für große $n$ die Summe der ZV näherungsweise normalverteilt ist mit Erwartungswert $n\mu$ und Varianz $n\sigma^2$:
+\[
+\sum_{i=1}^n X_i \sim N(n\mu, n\sigma^2).
+\]
+
+\subsection{Erklärung der Standardisierung}
+
+Um die Summe der ZV in eine Standardnormalverteilung zu transformieren, subtrahiert man den Erwartungswert $n\mu$ und teilt durch die Standardabweichung $\sigma\sqrt{n}$. Dies führt zu der obigen Formel (1). Die Darstellung (2) ist für $n \to \infty$ nicht wohldefiniert.
+
+\subsection{Anwendungen}
+
+
+Der ZGS wird in vielen Bereichen der Statistik und der Wahrscheinlichkeitstheorie angewendet. Typische Beispiele sind:
+\begin{itemize}
+
+
+    \item \textbf{Hypothesentests:}Bei Hypothesentests spielt der ZGS eine zentrale Rolle, da er es erlaubt, die Verteilung der Teststatistik durch eine Normalverteilung zu nähern. Dadurch können kritische Werte präzise abgeleitet und die Signifikanz eines Testergebnisses bewertet werden.
+    \item \textbf{Fertigungsindustrie:}In der Fertigungsindustrie nutzt man die Annahme, dass Durchschnittswerte von Qualitätsmetriken einer Normalverteilung folgen, um präzise Toleranzgrenzen für Produkte festzulegen.
+\end{itemize}
+
+    
+
+\section{Bearbeitung zur Aufgabe 1}
+
+\subsection{Berechnung der höchsten mittleren Temperatur in Grad Celsius}
+
+Die Berechnung der höchsten mittleren Temperatur in Grad Celsius wurde mit einer Tabellenkalkulation  durchgeführt und erfolgte in mehreren Schritten:
+
+
+\begin{enumerate}
+    \item \textbf{Datenaufbereitung:} Die Rohdaten wurden nach Gruppen sortiert und mit einer Tabelle übersichtlicher dargestellt
+    \item \textbf{Filtern der relevanten Daten:} Per Filter wurden ausschließlich die Daten der Gruppe 34 herausgefiltert und genutzt.
+    \item \textbf{Berechnung der höchsten mittleren Temperatur:} Eine neue Spalte wurde hinzugefügt, um die höchste durchschnittliche Temperatur in Fahrenheit zu ermitteln. Dieser Wert betrug 83.
+    \item \textbf{Umrechnung in Grad Celsius:} In einer weiteren Spalte wurde der Fahrenheit-Wert in Grad Celsius umgerechnet, wobei die Umrechnungsformel 
+
+    \begin{align*}
+     T_{\text{Celsius}} &= \frac{T_{\text{Fahrenheit}} - 32}{1.8}
+     \end{align*}
+verwendet wurde.
+
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=1\textwidth]{tabelle celsius.png}
+    \caption{Sortierte Tabelle der Daten.}
+    \label{fig:normalform1}
+\end{figure}
+
+
+    
+\end{enumerate}
+
+
+Auf diese Weise konnte die höchste mittlere Temperatur in Grad Celsius ermittelt 
+werden und betrug 28.33.
+
+
+
+\subsection {Datenbank-Schema entwerfen 1. Normalform und 2. Normalform}
+
+Um ein korrektes Datenbank-Schema zu entwerfen, wird zunächst die 1. Normalform erfüllt und anschließend in die 2. Normalform überführt.
+
+\subsubsection*{1. Normalform (1NF)}
+
+\addcontentsline{toc}{subsubsection}{1. Normalform (1NF)}
+
+
+Die 1. Normalform verlangt, dass:
+\begin{itemize}
+    \item Alle Attribute atomar sind (d. h. jedes Feld enthält nur einen Wert, keine Mehrfachwerte).
+    \item Jede Zeile eindeutig durch einen Primärschlüssel identifiziert wird.
+\end{itemize}
+
+Beispielhafte Tabelle in der 1. Normalform:
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=1\textwidth]{1nftabelle.png}
+    \caption{ 1. Normalform.}
+    \label{fig:normalform1}
+\end{figure}
+\vspace{2cm}
+\subsubsection*{2. Normalform (2NF)}
+
+\addcontentsline{toc}{subsubsection}{2. Normalform (2NF)}
+
+
+
+Die 2. Normalform verlangt, dass:
+\begin{itemize}
+    \item Die Tabelle bereits in der 1. Normalform ist.
+    \item Nicht-Schlüsselattribute vollständig von allen Bestandteilen eines zusammengesetzten Schlüssels abhängen (Vermeidung partieller Abhängigkeiten).
+    \item Daten in mehrere Tabellen aufgeteilt werden, um Redundanzen zu minimieren.
+\end{itemize}
+
+
+
+Das Schema wird in kleinere, logisch verbundene Tabellen aufgeteilt, basierend auf funktionalen Abhängigkeiten:
+
+
+
+Hierbei wird eine Beziehung  zwischen den Tabellen \texttt{Stationen} und \texttt{Wetterdaten} eingeführt, bei der der Fremdschlüssel \texttt{StationID\#} die Verbindung herstellt.
+
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=1\textwidth]{2nf fahrradverleih.jpg}
+    \caption{ Tabelle Fahrradverleih}
+    \label{fig:normalform1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{2nfstationen.jpg}
+    \caption{ Tabelle Stationen}
+    \label{fig:normalform1}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=1
+\textwidth]{2nfwetterdaten.jpg}
+    \caption{ Tabelle Wetterdaten}
+    \label{fig:normalform1}
+\end{figure}
+
+
+Das Datenbank-Schema wurde gemäß den Anforderungen der 1. und 2. Normalform entworfen, wodurch Datenintegrität gewährleistet und Redundanz minimiert wird.
+\subsection*{2.3 Umsetzung des Schemas in SQL }
+\addcontentsline{toc}{subsection}{2.3 Umsetzung des Schemas in SQL)}
+
+Für die Umsetzung des Datenbank-Schemas wurden drei Tabellen angelegt, die die logische Struktur der Daten abbilden. Die Tabellen beinhalten Daten zu \textbf{Stationen}, \textbf{Fahrradverleih} und \textbf{Wetterdaten}.
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.54\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{thumbnail_Fahhradverleih Table.jpg}
+        \caption{Fahrradverleih Tabelle}
+        \label{fig:bild1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{INSERT F.png}
+        \label{fig:bild2}
+    \end{minipage}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.54\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{thumbnail_Station Table.jpg}
+        \caption{Stationen Tabelle}
+        \label{fig:bild1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{INSERT S.png}
+        \label{fig:bild2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.54\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{WETTERDATEN TABLE.jpg}
+        \caption{Wetterdaten Tabelle}
+        \label{fig:bild1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{INSERT W.png}
+        \label{fig:bild2}
+    \end{minipage}
+\end{figure}
+
+
+\vspace{4cm}
+\subsection*{2.4 Umsetzung des Schemas in SQL DDL-Teil }
+\addcontentsline{toc}{subsection}{2.4 Umsetzung des Schemas in SQL DDL-Teil}
+Um mit den Daten zu arbeiten, war es nicht notwendig, ein eigenes DDL-Skript zu erstellen. 
+\\[0.5cm]
+Der Grund dafür liegt in der Nutzung von SQLite Online, das so konfiguriert ist, dass Tabellen automatisch erstellt werden, wenn eine Abfrage auf eine nicht existierende Tabelle verweist. 
+\\[0.5cm]
+Dadurch konnten wir auf ein manuelles DDL-Skript verzichten.
+Dieser Ansatz ersparte uns die Notwendigkeit, zusätzliche Anpassungen an der Tabellenkalkulation vorzunehmen, und ermöglichte es uns, direkt mit dem Schreiben der SQL-Abfragen zu beginnen.
+\\[0.5cm]
+Zur Vollständigkeit listen wir im Folgenden jedoch die grundlegenden Befehle auf, die für die Erstellung und Verwaltung von Datenbanken und Tabellen verwendet werden können:
+
+
+\begin{itemize}
+    \item \texttt{CREATE DATABASE} – Erzeugt eine neue Datenbank.
+    \item \texttt{ALTER DATABASE} – Modifiziert eine bestehende Datenbank.
+    \item \texttt{CREATE TABLE} – Erzeugt eine neue Tabelle in der Datenbank.
+    \item \texttt{ALTER TABLE} – Modifiziert die Struktur einer bestehenden Tabelle.
+    \item \texttt{DROP TABLE} – Löscht eine Tabelle und ihre Daten aus der Datenbank.
+    \item \texttt{CREATE INDEX} – Erzeugt einen Index, um die Abfragegeschwindigkeit zu verbessern.
+    \item \texttt{DROP INDEX} – Löscht einen bestehenden Index.
+\end{itemize}
+
+
+\subsection* {2.5 Formulierung der SQL-Abfrage zur höchsten mittleren Temperatur}
+\addcontentsline{toc}{subsection}{2.5 Formulierung der SQL-Abfrage zur höchsten mittleren Temperatur}
+Die höchste mittlere Temperatur in Grad Celsius wird durch eine SQL-Abfrage berechnet. Nachfolgend sind die Abbildungen der Datei Importierung; Daten von der Gruppe 34 und die SQL-Abfrage zu der höchste mittlere Temperatur in Grad Celsius.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{sqlite celisus berechen.jpg}
+    \caption{Import der Datei}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{sqlite celsisu ergebnis.jpg}
+    \caption{SQL Code höchste mittlere Temperatur }
+    \label{fig:enter-label}
+\end{figure}
+
+\section*{3. Quellenverzeichnis}
+\addcontentsline{toc}{section}{3. Quellenverzeichnis}
+
+
+
+
+\begin{itemize}
+    \item    Achim Klenke. Wahrscheinlichkeitstheorie. Springer, 3. edition, 2013.
+    \item \url{https://sqliteonline.com/}
+    \item\url{https://moodle.uni-bielefeld.de/course/view.php?id=6748}
+     \item \href{https://github.com/Ayad78/Abgabe-Comp./new/main}{GitHub Link }
+\end{itemize}
+
+
+
+\end{document}
